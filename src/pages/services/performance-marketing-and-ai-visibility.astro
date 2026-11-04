@@ -1,0 +1,144 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const channels = [
+  ['Meta (Facebook and Instagram) ads', 'Reaching people by location, interests and behaviour, showing ads again to people who visited your site, and lead forms that send enquiries straight into your CRM.'],
+  ['Google Ads (search, Performance Max, YouTube, display)', 'Search ads reach people at the moment they look for what you sell. Performance Max, YouTube and display extend that reach across Google and bring back people who did not enquire the first time.'],
+  ['LinkedIn ads', 'Reaching decision makers by job title, seniority, company and industry. Best suited to business offers where each customer is worth a lot.'],
+  ['TikTok ads', 'Short video for reaching broad audiences and testing which messages and creative people respond to.'],
+  ['X ads', 'Reaching people around the conversations, events and topics in your industry.'],
+];
+
+const work = [
+  { h: 'Research the audience and offer', p: 'Who buys, what makes them choose, and what offer is worth putting money behind.' },
+  { h: 'Set up tracking properly', p: 'Pixels, conversion tracking, analytics and a CRM connection, so every lead is traced to the ad that brought it in.' },
+  { h: 'Create and test', p: 'Ads and landing pages built in several versions and tested against each other on real traffic.' },
+  { h: 'Manage budgets and bids', p: 'Spend moved daily or weekly towards the campaigns, audiences and placements that bring enquiries.' },
+  { h: 'Cut and scale', p: 'What does not convert is switched off. What does gets more budget.' },
+  { h: 'Report in money terms', p: 'Cost per lead, cost per customer and revenue, taken from the CRM, not from likes or reach.' },
+];
+
+const terms = [
+  {
+    label: 'SEO',
+    h: 'Search engine optimisation',
+    p: 'Getting found in Google and other search engines.',
+    what: 'Technical health of your website, a clear site structure, useful content, credible sites linking to you, and local listings like your Google Business Profile.',
+  },
+  {
+    label: 'AEO',
+    h: 'Answer engine optimisation',
+    p: 'Structuring your content so it becomes the direct answer in search results, voice assistants and AI overviews.',
+    what: 'Clear questions with clear answers, structured data that tells machines what each page is about, and short, accurate definitions.',
+  },
+  {
+    label: 'GEO',
+    h: 'Generative engine optimisation',
+    p: 'Being mentioned, cited and recommended by AI assistants like ChatGPT, Claude, Gemini and Perplexity.',
+    what: 'Your business clearly described across the web, earned mentions in credible publications, the same facts about you everywhere, and content an AI can quote.',
+  },
+];
+
+const layers = [
+  { h: 'Lay the foundation with SEO', p: 'Fix the site, make every page say plainly what you do and for whom, set up your Google Business Profile, and earn links from credible sites.' },
+  { h: 'Build GEO on top', p: 'Make your company facts consistent everywhere, earn mentions in credible publications and industry bodies, and publish content specific enough to be quoted.' },
+  { h: 'Optimise for AEO', p: 'Shape the pages that answer real customer questions into the clearest answer available, marked up with structured data.' },
+];
+---
+<ServiceLayout
+  name="Performance Marketing and AI Visibility"
+  title="Performance Marketing and AI Visibility"
+  description="Paid advertising on Meta, Google, LinkedIn, TikTok and X, tracked to cost per customer, plus SEO, GEO and AEO so search engines and AI assistants find and recommend your business."
+  headline="Ads judged by customers, and visibility where buyers now search."
+  intro="Two parts. Performance marketing run against business results, not likes. And SEO, GEO and AEO, so Google and AI assistants like ChatGPT, Claude, Gemini and Perplexity can find you, trust you and recommend you."
+>
+  <section class="section" aria-labelledby="pm-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Part A</span>
+        <h2 id="pm-heading">Performance marketing.</h2>
+        <p>Paid advertising run against business results: enquiries, customers and revenue. Every campaign is tracked into your CRM, so you can see which ads bring in business and which only bring in clicks.</p>
+      </div>
+      <table class="compare">
+        <caption class="visually-hidden">Advertising channels and what we use each one for</caption>
+        <thead>
+          <tr><th scope="col">Channel</th><th scope="col">What we use it for</th></tr>
+        </thead>
+        <tbody>
+          {channels.map(([a, b]) => <tr><td>{a}</td><td>{b}</td></tr>)}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="work-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What we actually do</span>
+        <h2 id="work-heading">From research to revenue reports.</h2>
+      </div>
+      <div class="grid grid-3 ruled">
+        {work.map((s, i) => (
+          <div class="cell">
+            <span class="num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.h}</h3>
+            <p>{s.p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="terms-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Part B</span>
+        <h2 id="terms-heading">SEO, GEO and AEO: search and AI visibility.</h2>
+        <p>Three terms you will hear a lot. They overlap, but they are not the same thing. Here is what each one means.</p>
+      </div>
+      <div class="grid grid-3 ruled">
+        {terms.map((t) => (
+          <div class="cell">
+            <span class="num">{t.label}</span>
+            <h3>{t.h}</h3>
+            <p>{t.p}</p>
+            <p style="margin-top: 1em;"><strong>What it takes:</strong> {t.what}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="geo-heading">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">AI search, plainly</span>
+        <h2 id="geo-heading">Getting recommended by AI starts with good SEO.</h2>
+      </div>
+      <div>
+        <p class="lead">When someone asks ChatGPT, Claude, Gemini or Perplexity to recommend a firm, the answer comes from what those tools can find and trust about you online.</p>
+        <p class="lead">Many businesses are so caught up in GEO and AEO that they forget both sit on top of strong SEO. SEO is not dead. It is the base layer. Without it, there is nothing for AI to find and trust.</p>
+        <p class="lead">There is no trick to it. That is why we do all three together, in order.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="layers-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Our approach</span>
+        <h2 id="layers-heading">SEO first. GEO on top. AEO to finish.</h2>
+        <p>Each layer depends on the one below it. Read more in <a href="/blog/seo-is-not-dead-ai-search-starts-with-the-basics/">SEO is not dead: why AI search still starts with the basics</a>.</p>
+      </div>
+      <div class="grid grid-3 ruled">
+        {layers.map((s, i) => (
+          <div class="cell">
+            <span class="num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.h}</h3>
+            <p>{s.p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

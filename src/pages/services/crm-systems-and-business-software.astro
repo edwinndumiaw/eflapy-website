@@ -1,0 +1,137 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const startingPoints = [
+  'A CRM the team uses fully, partly, or has quietly stopped using',
+  'An ERP that runs stock, orders, production or procurement',
+  'Accounting software that holds your invoices, payments and customer balances',
+  'Industry software built for your sector, such as a property, insurance, logistics or school management platform',
+  'A custom system someone built for you years ago',
+  'A mix of spreadsheets, WhatsApp groups, email and paper that do not talk to each other',
+];
+
+const crm = [
+  { h: 'Dashboard and reporting', p: 'One view of your pipeline, revenue, team activity and campaign results.' },
+  { h: 'Contacts and customer records', p: 'Every customer with their full history, tags, custom fields and notes in one record.' },
+  { h: 'Pipelines and opportunities', p: 'Deals tracked stage by stage, so nothing stalls without someone seeing it.' },
+  { h: 'One inbox for every conversation', p: 'WhatsApp, SMS, email, Instagram and Facebook messages, website live chat and calls in one place.' },
+  { h: 'Calendars and bookings', p: 'Online booking, automatic reminders and scheduling across your team.' },
+  { h: 'Payments and invoices', p: 'Quotes, invoices and payment links sent from the same system that holds the customer record.' },
+  { h: 'Marketing', p: 'Email and SMS campaigns, a social media planner and lists segmented by what customers have done.' },
+  { h: 'Automations and workflows', p: 'Follow ups, reminders, task assignment and hand offs between teams that run on their own.' },
+  { h: 'Websites, funnels, forms and surveys', p: 'Pages and forms that capture enquiries straight into the CRM, with no copying.' },
+  { h: 'Reputation management', p: 'Asking happy customers for reviews, and replying to reviews from one place.' },
+  { h: 'Phone system and call tracking', p: 'Business numbers, call recording, and knowing which campaign brought in each call.' },
+  { h: 'Memberships and courses', p: 'Where your business needs them, member areas and online courses run from the same system.' },
+  { h: 'Mobile app', p: 'Your team can see customers, reply to messages and update deals from their phones.' },
+  { h: 'AI built in', p: 'AI that answers chats and calls, qualifies leads, books appointments and drafts replies, using the same customer data.' },
+  { h: 'Under your brand', p: 'Where you want it, the whole system is white labelled with your name, logo and domain, so your team and customers see your brand.' },
+];
+
+const connections = [
+  'Your ERP and CRM sharing customer and order data, so sales can see what a customer has ordered and owes',
+  'Your accounting software receiving invoices automatically when a deal closes',
+  'Your support tools passing each ticket to the right team, with the customer history attached',
+  'Website forms, ads and WhatsApp enquiries landing in the system your team already works in',
+  'Reports pulling from every system at once, instead of someone building them by hand each month',
+];
+
+const custom = [
+  'Business software built around a process no product handles well',
+  'Internal tools for approvals, operations and field teams',
+  'Portals where clients, agents or suppliers log in to see their own information',
+  'Dashboards that bring numbers from several systems into one view for leadership',
+];
+
+const steps = [
+  { h: 'Assess', p: 'The assessment maps what you run today and shows where data is missing, duplicated or stuck in one place.' },
+  { h: 'Set up, connect or build', p: 'We decide with you what to set up, what to connect and what to build, and in what order.' },
+  { h: 'Put AI to work', p: 'AI then works on clean, connected data: answering customers, following up, preparing reports and flagging what needs attention.' },
+];
+---
+<ServiceLayout
+  name="CRM Systems and Business Software"
+  title="CRM Systems and Business Software"
+  description="We set up and customise a full CRM for your business, connect the ERP, accounting and industry software you already run, and build custom business software where nothing else fits, so AI works on clean, connected data."
+  headline="AI can only work with what your business runs on."
+  intro="Every engagement starts by checking what you use today: a CRM, an ERP, accounting or industry software, a custom system built for you, or a mix of tools that do not talk to each other. Then we set up, connect or build what is missing."
+>
+  <section class="section" aria-labelledby="start-heading">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Where we start</span>
+        <h2 id="start-heading">First, we look at what you already use.</h2>
+        <p class="lead">An AI agent that follows up with customers needs to know who they are, what they asked for and what happened last time. If that information lives in one salesperson's phone, the agent cannot help. So before we build anything, we find out where your information actually lives.</p>
+      </div>
+      <ul class="rule-list">
+        {startingPoints.map((i) => <li>{i}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="crm-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">CRM</span>
+        <h2 id="crm-heading">A CRM system built around your business.</h2>
+        <p>We set up and customise a full CRM for how your business sells, serves and follows up. Not a contact list with a pipeline on top, but the system your team runs its customer work from every day.</p>
+      </div>
+      <div class="grid grid-3 ruled">
+        {crm.map((c) => (
+          <div class="cell">
+            <h3>{c.h}</h3>
+            <p>{c.p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="existing-heading">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Your existing software</span>
+        <h2 id="existing-heading">We work with the software you already have.</h2>
+        <p class="lead">If you run an ERP, an accounting system, an industry platform or your own custom software, we do not ask you to replace it. We connect AI to it, and connect it to your other systems, so information moves between them and your team stops copying data by hand.</p>
+      </div>
+      <div>
+        <p class="muted">For example:</p>
+        <ul class="rule-list">
+          {connections.map((i) => <li>{i}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="custom-heading">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Custom software</span>
+        <h2 id="custom-heading">Custom software when nothing off the shelf fits.</h2>
+        <p class="lead">Some businesses work in a way no product was designed for. Our software development team builds custom business software for how your company works, designed from the gaps the assessment found rather than from a feature list.</p>
+      </div>
+      <ul class="rule-list">
+        {custom.map((i) => <li>{i}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ai-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How it connects to AI</span>
+        <h2 id="ai-heading">Structure first. Then scale.</h2>
+        <p>Also available on its own, if you need working systems before you think about AI.</p>
+      </div>
+      <div class="grid grid-3 ruled">
+        {steps.map((s, i) => (
+          <div class="cell">
+            <span class="num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.h}</h3>
+            <p>{s.p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

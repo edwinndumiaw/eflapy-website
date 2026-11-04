@@ -25,16 +25,16 @@ export const SERVICES: Service[] = [
     href: '/services/ai-adoption-program/',
   },
   {
-    slug: 'systems-and-crm',
-    name: 'Systems and CRM',
-    short: 'AI is only as good as the data underneath it. We set up or fix the CRM and systems first.',
-    href: '/services/systems-and-crm/',
+    slug: 'crm-systems-and-business-software',
+    name: 'CRM Systems and Business Software',
+    short: 'We set up a full CRM built around how you sell and serve, connect the software you already run, and build custom software where nothing else fits. AI then works on clean, connected data.',
+    href: '/services/crm-systems-and-business-software/',
   },
   {
-    slug: 'growth-and-ai-visibility',
-    name: 'Growth and AI Visibility',
-    short: 'Performance marketing that brings in demand, and visibility where buyers now ask for recommendations.',
-    href: '/services/growth-and-ai-visibility/',
+    slug: 'performance-marketing-and-ai-visibility',
+    name: 'Performance Marketing and AI Visibility',
+    short: 'Paid advertising on Meta, Google, LinkedIn, TikTok and X, judged by cost per customer. Plus SEO, GEO and AEO so search engines and AI assistants find and recommend you.',
+    href: '/services/performance-marketing-and-ai-visibility/',
   },
 ];
 
