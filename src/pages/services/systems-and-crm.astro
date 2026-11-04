@@ -1,0 +1,48 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const items = [
+  { h: 'Set up', p: 'A CRM that matches how your team actually sells and serves customers.' },
+  { h: 'Fix', p: 'An existing CRM that nobody trusts, cleaned up and connected so people use it again.' },
+  { h: 'Connect', p: 'Your CRM, email, documents and accounts talking to each other, so information is entered once.' },
+];
+---
+<ServiceLayout
+  name="Systems and CRM"
+  title="Systems and CRM"
+  description="AI is only as good as the data underneath it. We set up or fix your CRM and systems first, so AI has something to work with. Also available on its own."
+  headline="AI is only as good as the data underneath it."
+  intro="If your leads live in WhatsApp chats and spreadsheets, AI has nothing to work with. We set up or fix the CRM and systems first."
+>
+  <section class="section" aria-labelledby="why-heading">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Why it comes first</span>
+        <h2 id="why-heading">Structure first. Then scale.</h2>
+      </div>
+      <div>
+        <p class="lead">An AI agent that follows up with customers needs to know who the customers are, what they asked for and what happened last time. If that lives in one salesperson's phone, the agent cannot help.</p>
+        <p class="lead">So when the assessment shows the data is not ready, we fix the systems before we build anything on top of them.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="what-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What we do</span>
+        <h2 id="what-heading">Set up, fix, connect.</h2>
+        <p>Also available on its own, if you need a working CRM before you think about AI.</p>
+      </div>
+      <div class="grid grid-3 ruled">
+        {items.map((s, i) => (
+          <div class="cell">
+            <span class="num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.h}</h3>
+            <p>{s.p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

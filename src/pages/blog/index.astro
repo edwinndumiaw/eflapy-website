@@ -1,0 +1,58 @@
+---
+import Base from '../../layouts/Base.astro';
+import CTA from '../../components/CTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getPosts, formatDate } from '../../lib/posts';
+import { SITE } from '../../config';
+
+const posts = await getPosts();
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Blog', href: '/blog/' },
+];
+---
+<Base
+  title="Blog"
+  description="Notes from Eflapy Digital on AI operations: what we build, what we learn, and how companies in Kenya and beyond get real work out of AI."
+  breadcrumbs={crumbs}
+  schema={[{
+    '@type': 'Blog',
+    name: 'Eflapy Digital blog',
+    url: `${SITE.url}/blog/`,
+    publisher: { '@id': `${SITE.url}/#organization` },
+  }]}
+>
+  <section class="page-hero" aria-labelledby="page-heading">
+    <div class="container">
+      <Breadcrumbs items={crumbs} />
+      <span class="eyebrow">Blog</span>
+      <h1 id="page-heading">Building in public.</h1>
+      <p class="lead">What we are working on, what went well, and what did not. Subscribe with <a href="/rss.xml">RSS</a>.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="posts-heading">
+    <div class="container">
+      <h2 id="posts-heading" class="visually-hidden">All posts</h2>
+      {posts.length === 0 ? (
+        <p class="muted">No posts yet.</p>
+      ) : (
+        <ul class="post-list">
+          {posts.map((p) => (
+            <li>
+              <a href={`/blog/${p.id}/`}>
+                <time datetime={p.data.date.toISOString()}>{formatDate(p.data.date)}</time>
+                <div>
+                  <h3>{p.data.title}</h3>
+                  <p>{p.data.description}</p>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+
+  <CTA />
+</Base>

@@ -1,0 +1,20 @@
+/*
+  Brand colours and fonts live here. Swap these values to rebrand the whole site.
+  Everything else in the stylesheet reads from these variables.
+*/
+:root {
+  --color-bg: #ffffff;          /* page background */
+  --color-bg-alt: #f6f6f6;      /* soft section background */
+  --color-text: #0a0a0a;        /* main text */
+  --color-muted: #5c5c5c;       /* secondary text */
+  --color-rule: #e4e4e4;        /* thin lines and borders */
+  --color-accent: #0a0a0a;      /* buttons, links, highlights */
+  --color-accent-text: #ffffff; /* text on accent */
+  --color-inverse-bg: #0a0a0a;  /* dark sections */
+  --color-inverse-text: #ffffff;
+  --color-inverse-muted: #a8a8a8;
+  --color-inverse-rule: #2a2a2a;
+
+  --font-heading: 'Comfortaa', ui-rounded, system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}

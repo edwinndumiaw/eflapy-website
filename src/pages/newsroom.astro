@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { getPosts, formatDate } from '../lib/posts';
+import { SITE } from '../config';
+
+const items = (await getPosts()).filter((p) => p.data.tags.map((t) => t.toLowerCase()).includes('press'));
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Newsroom', href: '/newsroom/' },
+];
+---
+<Base
+  title="Newsroom"
+  description="Press releases and announcements from Eflapy Digital, an AI operations firm based in Nairobi, Kenya."
+  breadcrumbs={crumbs}
+>
+  <section class="page-hero" aria-labelledby="page-heading">
+    <div class="container">
+      <Breadcrumbs items={crumbs} />
+      <span class="eyebrow">Newsroom</span>
+      <h1 id="page-heading">Press releases and announcements</h1>
+      <p class="lead">For press enquiries, email <a href={`mailto:${SITE.email}`}>{SITE.email}</a> or call <a href={`tel:${SITE.phoneHref}`}>{SITE.phone}</a>.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="news-heading">
+    <div class="container">
+      <h2 id="news-heading" class="visually-hidden">Announcements</h2>
+      {items.length === 0 ? (
+        <p class="lead">There are no press releases yet. Announcements will appear here.</p>
+      ) : (
+        <ul class="post-list">
+          {items.map((p) => (
+            <li>
+              <a href={`/blog/${p.id}/`}>
+                <time datetime={p.data.date.toISOString()}>{formatDate(p.data.date)}</time>
+                <div>
+                  <h3>{p.data.title}</h3>
+                  <p>{p.data.description}</p>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+</Base>

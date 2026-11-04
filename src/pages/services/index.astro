@@ -1,0 +1,76 @@
+---
+import Base from '../../layouts/Base.astro';
+import CTA from '../../components/CTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { SERVICES } from '../../data/services';
+import { serviceSchema } from '../../data/schema';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Services', href: '/services/' },
+];
+const description =
+  'Five services from one AI operations firm: AI Operations Assessment, AI Workforce Build, AI Adoption Program, Systems and CRM, and Growth and AI Visibility.';
+---
+<Base
+  title="Services"
+  description={description}
+  breadcrumbs={crumbs}
+  schema={SERVICES.map((s) => serviceSchema(s.name, s.short, s.href))}
+>
+  <section class="page-hero" aria-labelledby="page-heading">
+    <div class="container">
+      <Breadcrumbs items={crumbs} />
+      <span class="eyebrow">Services</span>
+      <h1 id="page-heading">Find where AI fits. Build it. Get people using it.</h1>
+      <p class="lead">Every engagement starts with how your business runs today. The first three services follow Find, Build and Use. The last two make sure there is good data underneath and steady demand coming in.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="list-heading">
+    <div class="container">
+      <h2 id="list-heading" class="visually-hidden">All services</h2>
+      <ul class="link-rows">
+        {SERVICES.map((s, i) => (
+          <li>
+            <a href={s.href}>
+              <span class="num">{String(i + 1).padStart(2, '0')}</span>
+              <h3>{s.name}</h3>
+              <p>{s.short}</p>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="map-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How they fit together</span>
+        <h2 id="map-heading">Find. Build. Use.</h2>
+      </div>
+      <div class="grid grid-3 ruled">
+        <div class="cell">
+          <span class="num">Find</span>
+          <h3><a href="/services/ai-operations-assessment/">AI Operations Assessment</a></h3>
+          <p>We map how work moves today and rank the gaps by what they cost.</p>
+        </div>
+        <div class="cell">
+          <span class="num">Build</span>
+          <h3><a href="/services/ai-workforce-build/">AI Workforce Build</a></h3>
+          <p>We build the fixes the assessment found, inside your operations.</p>
+        </div>
+        <div class="cell">
+          <span class="num">Use</span>
+          <h3><a href="/services/ai-adoption-program/">AI Adoption Program</a></h3>
+          <p>We get your people using AI in their real work, safely.</p>
+        </div>
+      </div>
+      <p class="mt-l muted">Underneath all three: <a href="/services/systems-and-crm/">Systems and CRM</a>, because AI needs clean data to work with. Around them: <a href="/services/growth-and-ai-visibility/">Growth and AI Visibility</a>, so new buyers find you.</p>
+    </div>
+  </section>
+
+  <CTA />
+</Base>

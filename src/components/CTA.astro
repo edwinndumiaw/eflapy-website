@@ -1,0 +1,16 @@
+---
+import { BOOKING_URL, CTA } from '../config';
+interface Props { heading?: string; body?: string }
+const { heading = CTA.heading, body = CTA.body } = Astro.props;
+---
+<section class="section cta" aria-labelledby="cta-heading">
+  <div class="container">
+    <span class="eyebrow">Free Operations Review</span>
+    <h2 id="cta-heading">{heading}</h2>
+    <p class="lead">{body}</p>
+    <div class="btn-row">
+      <a class="btn" href={BOOKING_URL}>{CTA.button}</a>
+      <a class="btn btn--ghost" href="/book/">How the review works</a>
+    </div>
+  </div>
+</section>

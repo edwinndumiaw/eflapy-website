@@ -1,0 +1,74 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const lookFor = [
+  'Where deals slow down or get lost',
+  'What staff complain about most',
+  'Tasks that take hours and add little',
+  'Information stuck in heads, chats and spreadsheets',
+  'Tools you pay for that nobody uses',
+];
+const how = [
+  { h: 'We listen', p: 'Conversations with leadership and with the people doing the work. Both views matter, and they rarely match.' },
+  { h: 'We map', p: 'How work moves today: who does what, in which tool, and where it waits.' },
+  { h: 'We measure', p: 'What each gap costs in time and money, so the decisions are based on numbers from your own business.' },
+  { h: 'We rank', p: 'Which fixes matter most and which can be done now.' },
+];
+const output = [
+  'A map of the operation today',
+  'The gaps, ranked by cost',
+  'Where AI fits, and where it does not',
+  'A plan for what to build first',
+  'A working demo of the first fix',
+];
+---
+<ServiceLayout
+  name="AI Operations Assessment"
+  title="AI Operations Assessment"
+  description="We study how your business actually runs, rank the gaps by what they cost, and show where AI fits and where it does not. You keep the findings either way."
+  headline="Before anything gets built, we learn how your business actually runs."
+  intro="We come into the company and study how leads move, how decisions get made, where work waits, and where people repeat the same task. Then we show you where AI fits and where it does not."
+>
+  <section class="section" aria-labelledby="look-heading">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">What we look for</span>
+        <h2 id="look-heading">The places where time and money leak.</h2>
+      </div>
+      <ul class="rule-list">
+        {lookFor.map((i) => <li>{i}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="how-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How we do it</span>
+        <h2 id="how-heading">Listen. Map. Measure. Rank.</h2>
+      </div>
+      <div class="grid grid-4 ruled">
+        {how.map((s, i) => (
+          <div class="cell">
+            <span class="num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.h}</h3>
+            <p>{s.p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="out-heading">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">What you get</span>
+        <h2 id="out-heading">A clear picture and a first fix you can see working.</h2>
+        <p class="note">The findings are yours, whether you build with us or not.</p>
+      </div>
+      <ol class="rule-list">
+        {output.map((i) => <li>{i}</li>)}
+      </ol>
+    </div>
+  </section>
+</ServiceLayout>

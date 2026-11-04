@@ -1,0 +1,106 @@
+---
+import Base from '../layouts/Base.astro';
+import CTA from '../components/CTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE } from '../config';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about/' },
+];
+---
+<Base
+  title="About"
+  description="Eflapy Digital is an AI operations firm in Nairobi, Kenya, founded by Edwin Ndumia. We have built AI and CRM systems for clients in six regions since 2023."
+  breadcrumbs={crumbs}
+  schema={[{
+    '@type': 'AboutPage',
+    name: 'About Eflapy Digital',
+    url: `${SITE.url}/about/`,
+    about: { '@id': `${SITE.url}/#organization` },
+  }, {
+    '@type': 'Person',
+    name: 'Edwin Ndumia',
+    jobTitle: 'Founder and Managing Director',
+    worksFor: { '@id': `${SITE.url}/#organization` },
+    address: { '@type': 'PostalAddress', addressLocality: 'Nairobi', addressCountry: 'KE' },
+    email: SITE.email,
+  }]}
+>
+  <section class="page-hero" aria-labelledby="page-heading">
+    <div class="container">
+      <Breadcrumbs items={crumbs} />
+      <span class="eyebrow">About</span>
+      <h1 id="page-heading">An AI operations firm based in Nairobi, Kenya.</h1>
+      <p class="lead">{SITE.coreLine} We have done this for clients in Kenya, the UK, the Gulf, the US, Panama and Spain.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="founder-heading">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Founder</span>
+        <h2 id="founder-heading">Edwin Ndumia</h2>
+        <p class="muted">Founder and Managing Director</p>
+      </div>
+      <div>
+        <p class="lead">Edwin is based in Nairobi and studies Mass Communication (Public Relations) at JKUAT, the Jomo Kenyatta University of Agriculture and Technology.</p>
+        <p class="lead">Since 2023 he has built AI and CRM systems for clients in Kenya, the UK, the Gulf, the US, Panama and Spain: email and messaging agents, voice agents, lead research tools, inspection apps and the CRMs underneath them.</p>
+        <p class="lead">You can reach him at <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="half-heading">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Why communication matters</span>
+        <h2 id="half-heading">AI adoption is half technical and half communication.</h2>
+      </div>
+      <div>
+        <p class="lead">The technical half is building something that works. The other half is getting people to trust it, understand where it fits in their job, and change how they work.</p>
+        <p class="lead">In our experience, when an AI project stalls, it is rarely the technology. It stalls because nobody explained the change, the rules were unclear, or the people who were meant to use it were never asked. A background in Public Relations turns out to be useful here. Much of our work is listening, explaining and writing things down clearly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark" aria-labelledby="principle-heading">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">How we think</span>
+        <h2 id="principle-heading">Our principle</h2>
+      </div>
+      <div>
+        <p class="quote-line">Structure first. Then scale.</p>
+        <p class="lead mt-l">We fix how the work is organised before we add AI to it. Automating a messy process only gives you a faster mess.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--first" aria-labelledby="facts-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">In short</span>
+        <h2 id="facts-heading">The facts.</h2>
+      </div>
+      <dl class="facts">
+        <div><dt>What we are</dt><dd>An AI operations firm</dd></div>
+        <div><dt>Based in</dt><dd>Nairobi, Kenya</dd></div>
+        <div><dt>Working since</dt><dd>2023</dd></div>
+        <div><dt>Clients</dt><dd>More than 15 businesses served across 9 countries</dd></div>
+        <div><dt>Who we work with</dt><dd>Organisations of 30 to 500 people</dd></div>
+        <div><dt>How we work</dt><dd>Find. Build. Use.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <CTA />
+</Base>
+
+<style>
+  .facts { margin: 0; border-top: 1px solid var(--color-text); }
+  .facts div { display: grid; grid-template-columns: 240px 1fr; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--color-rule); }
+  .facts dt { color: var(--color-muted); }
+  .facts dd { margin: 0; font-weight: 500; }
+  @media (max-width: 720px) { .facts div { grid-template-columns: 1fr; gap: 4px; } }
+</style>

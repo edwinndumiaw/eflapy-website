@@ -1,0 +1,62 @@
+---
+import Base from './Base.astro';
+import CTA from '../components/CTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { serviceSchema } from '../data/schema';
+import { SERVICES } from '../data/services';
+import { BOOKING_URL } from '../config';
+
+interface Props {
+  name: string;
+  title: string;
+  description: string;
+  headline: string;
+  intro: string;
+}
+const { name, title, description, headline, intro } = Astro.props;
+const path = Astro.url.pathname;
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Services', href: '/services/' },
+  { name, href: path },
+];
+const others = SERVICES.filter((s) => s.href !== path && s.href !== `${path}/`);
+---
+<Base title={title} description={description} breadcrumbs={crumbs} schema={[serviceSchema(name, description, path)]}>
+  <section class="page-hero" aria-labelledby="page-heading">
+    <div class="container">
+      <Breadcrumbs items={crumbs} />
+      <span class="eyebrow">{name}</span>
+      <h1 id="page-heading">{headline}</h1>
+      <p class="lead">{intro}</p>
+      <div class="btn-row mt-l">
+        <a class="btn" href={BOOKING_URL}>Book an operations review</a>
+      </div>
+    </div>
+  </section>
+
+  <slot />
+
+  <section class="section" aria-labelledby="other-services">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Other services</span>
+        <h2 id="other-services">What else we do</h2>
+      </div>
+      <ul class="link-rows">
+        {others.map((s) => (
+          <li>
+            <a href={s.href}>
+              <span class="num" aria-hidden="true">→</span>
+              <h3>{s.name}</h3>
+              <p>{s.short}</p>
+              <span class="arrow" aria-hidden="true"></span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <CTA />
+</Base>

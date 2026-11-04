@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { BOOKING_URL, SITE } from '../config';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Book an operations review', href: '/book/' },
+];
+const steps = [
+  { h: 'Bring one process', p: 'Pick one thing that takes too long or goes wrong too often. How new enquiries are handled, how a monthly report gets made, or how a team uses the AI tool you already pay for.' },
+  { h: 'We talk it through', p: 'For 30 minutes we ask how it works today, who touches it, and where it waits.' },
+  { h: 'You get a written summary', p: 'Where AI fits in that process, where it does not, and what we would do first. You leave with it whether you hire us or not.' },
+];
+---
+<Base
+  title="Book a free Operations Review"
+  description="Bring one process. We will show you where AI fits. A free 30 minute Operations Review with Eflapy Digital, with a written summary whether you hire us or not."
+  breadcrumbs={crumbs}
+>
+  <section class="page-hero" aria-labelledby="page-heading">
+    <div class="container">
+      <Breadcrumbs items={crumbs} />
+      <span class="eyebrow">Free Operations Review</span>
+      <h1 id="page-heading">Bring one process. We will show you where AI fits.</h1>
+      <p class="lead">A free 30 minute conversation. You leave with a written summary whether you hire us or not.</p>
+      <div class="btn-row mt-l">
+        <a class="btn" href={BOOKING_URL}>Choose a time</a>
+        <a class="btn btn--ghost" href={`mailto:${SITE.email}?subject=Operations%20Review`}>Email us instead</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="how-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How it works</span>
+        <h2 id="how-heading">Thirty minutes, one process, one written summary.</h2>
+      </div>
+      <div class="grid grid-3 ruled">
+        {steps.map((s, i) => (
+          <div class="cell">
+            <span class="num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.h}</h3>
+            <p>{s.p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="contact-heading">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Prefer to talk first?</span>
+        <h2 id="contact-heading">Contact us directly.</h2>
+      </div>
+      <ul class="rule-list">
+        <li>Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+        <li>Phone: <a href={`tel:${SITE.phoneHref}`}>{SITE.phone}</a></li>
+        <li>Location: {SITE.city}, {SITE.country}</li>
+      </ul>
+    </div>
+  </section>
+</Base>

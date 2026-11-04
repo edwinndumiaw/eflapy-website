@@ -1,0 +1,68 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const basics = [
+  { h: 'A clear website', p: 'Pages that say plainly who you are, what you do and who you do it for, so both people and machines can read it.' },
+  { h: 'Useful content', p: 'Answers to the questions your buyers actually ask, written by people who know the work.' },
+  { h: 'Credible mentions', p: 'Other trustworthy sites talking about you: directories, press, partners and industry bodies.' },
+];
+---
+<ServiceLayout
+  name="Growth and AI Visibility"
+  title="Growth and AI Visibility"
+  description="Performance marketing that brings in demand, plus visibility where buyers now ask for recommendations: Google, ChatGPT, Claude and Perplexity. We do SEO and AI search together."
+  headline="Get found where buyers now ask for recommendations."
+  intro="Performance marketing that brings in demand, plus visibility on Google, ChatGPT, Claude and Perplexity, where more buyers now start their search."
+>
+  <section class="section" aria-labelledby="two-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Two parts</span>
+        <h2 id="two-heading">Demand now, and visibility that builds over time.</h2>
+      </div>
+      <div class="grid grid-2 ruled">
+        <div class="cell">
+          <span class="num">01</span>
+          <h3>Performance marketing</h3>
+          <p>Paid campaigns that bring in enquiries now, tracked through to your CRM so you can see which ones turn into business.</p>
+        </div>
+        <div class="cell">
+          <span class="num">02</span>
+          <h3>Search and AI visibility</h3>
+          <p>Work that helps Google and AI assistants find you, understand you and recommend you when a buyer asks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="geo-heading">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">AI search, plainly</span>
+        <h2 id="geo-heading">Getting recommended by AI starts with good SEO.</h2>
+      </div>
+      <div>
+        <p class="lead">When someone asks ChatGPT, Claude or Perplexity to recommend a firm, the answer comes from what those tools can find and trust about you online. People call the work of earning those recommendations GEO (generative engine optimisation) or AEO (answer engine optimisation).</p>
+        <p class="lead">There is no trick to it. It is built on the same things good SEO has always needed. That is why we do both together.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="basics-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What it is built on</span>
+        <h2 id="basics-heading">Three things.</h2>
+      </div>
+      <div class="grid grid-3 ruled">
+        {basics.map((s, i) => (
+          <div class="cell">
+            <span class="num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.h}</h3>
+            <p>{s.p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

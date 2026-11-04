@@ -1,0 +1,78 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const stall = [
+  'Nobody showed people where it fits in their job.',
+  'No one is sure what data is safe to use.',
+  'Managers do not use it, so their teams do not either.',
+  'There is no way to see whether it works.',
+];
+const steps = [
+  { h: 'Map', p: 'Where AI fits in each team’s day, task by task.' },
+  { h: 'Set the rules', p: 'A usage policy and data protection rules aligned with your country’s law, including Kenya’s Data Protection Act and the ODPC’s 2026 guidance on AI.' },
+  { h: 'Train by role', p: 'Sales trains on sales work. Finance trains on finance work. No generic workshops.' },
+  { h: 'Measure', p: 'A monthly report: who uses it, for what, and how many hours it saves.' },
+];
+const compare = [
+  ['Licences sitting idle', 'Teams using it daily'],
+  ['Staff unsure what is allowed', 'Clear rules everyone knows'],
+  ['One or two people who get it', 'Someone leading it in every team'],
+  ['Leadership guessing', 'A monthly report with real numbers'],
+];
+---
+<ServiceLayout
+  name="AI Adoption Program"
+  title="AI Adoption Program"
+  description="For companies already paying for ChatGPT, Copilot, Claude or Gemini. We get your people using the AI you already pay for, in their real work, safely."
+  headline="We get your people using the AI you already pay for, in their real work, safely."
+  intro="For companies already paying for ChatGPT, Copilot, Claude or Gemini, where the licences are bought but the work has not changed."
+>
+  <section class="section" aria-labelledby="stall-heading">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">The problem</span>
+        <h2 id="stall-heading">Why most AI rollouts stall.</h2>
+      </div>
+      <ul class="rule-list">
+        {stall.map((i) => <li>{i}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="steps-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How we do it</span>
+        <h2 id="steps-heading">Map. Set the rules. Train by role. Measure.</h2>
+      </div>
+      <div class="grid grid-4 ruled">
+        {steps.map((s, i) => (
+          <div class="cell">
+            <span class="num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.h}</h3>
+            <p>{s.p}</p>
+          </div>
+        ))}
+      </div>
+      <p class="note mt-l">We are not lawyers. Legal sign off stays with your legal team or your Data Protection Officer.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ba-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Before and after</span>
+        <h2 id="ba-heading">What changes.</h2>
+      </div>
+      <table class="compare">
+        <caption class="visually-hidden">Before and after the AI Adoption Program</caption>
+        <thead>
+          <tr><th scope="col">Before</th><th scope="col">After</th></tr>
+        </thead>
+        <tbody>
+          {compare.map(([a, b]) => <tr><td>{a}</td><td>{b}</td></tr>)}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</ServiceLayout>

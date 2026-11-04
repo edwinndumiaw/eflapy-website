@@ -1,0 +1,195 @@
+---
+import Base from '../layouts/Base.astro';
+import CTA from '../components/CTA.astro';
+import { BOOKING_URL, SITE } from '../config';
+import { SERVICES, INDUSTRIES } from '../data/services';
+import { CASES } from '../data/cases';
+import { getPosts, formatDate } from '../lib/posts';
+
+const posts = (await getPosts()).slice(0, 3);
+const caseCards = CASES.slice(0, 3);
+
+const engagement = [
+  { name: 'Operations Review', tag: 'Free', text: 'A 30 minute conversation about one process. You leave with a written summary whether you hire us or not.' },
+  { name: 'Assessment', text: 'We study how the business runs, rank the gaps by cost, and show where AI fits. You get a plan and a working demo of the first fix.' },
+  { name: 'Build', text: 'We build what the assessment found, connected to your CRM, email, documents and accounts, and test it on real work before it goes live.' },
+  { name: 'Adopt', text: 'We train each team on its own work, set clear rules for safe use, and report every month on who uses it and for what.' },
+  { name: 'Ongoing support', text: 'We watch performance, fix what breaks, add new uses, and send a monthly report to leadership.' },
+];
+---
+<Base
+  title="Eflapy Digital | AI operations firm in Nairobi, Kenya"
+  description="Eflapy Digital is an AI operations firm based in Nairobi, Kenya. We find where AI fits in your business, build it, and get your company using it."
+>
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="container">
+      <span class="eyebrow">AI operations firm · Nairobi, Kenya</span>
+      <h1 id="hero-heading">We find where AI fits in your business, build it, and get your company using it.</h1>
+      <p class="lead">Eflapy Digital is an AI operations firm based in Nairobi, Kenya. We work with organisations of 30 to 500 people that want AI doing real work, not sitting in a browser tab.</p>
+      <div class="btn-row">
+        <a class="btn" href={BOOKING_URL}>Book an operations review</a>
+        <a class="btn btn--ghost" href="/services/">See our services</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="gap-heading">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">The gap</span>
+        <h2 id="gap-heading">Paying for AI is not the same as using it.</h2>
+      </div>
+      <div>
+        <p class="quote-line">Most companies already pay for AI tools like ChatGPT, Copilot or Claude. Very few of their people use them well. That gap is where we work.</p>
+        <p class="lead mt-l">The licences are bought. A few people use them for emails. Nobody is sure what data is safe to paste in, and leadership cannot tell whether any of it saves time. We fix that, one process at a time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="fbu-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How we work</span>
+        <h2 id="fbu-heading">Find. Build. Use.</h2>
+        <p>Three steps. Most AI projects stop after the second one. We do not.</p>
+      </div>
+      <div class="grid grid-3 ruled steps-big">
+        <div class="cell">
+          <span class="num">01</span>
+          <h3>Find.</h3>
+          <p>We study how your business actually runs and find the gaps that cost the most time and money. Then we show where AI fits and where it does not.</p>
+        </div>
+        <div class="cell">
+          <span class="num">02</span>
+          <h3>Build.</h3>
+          <p>We build what we found, inside your operations: agents, workflows and assistants connected to the systems you already use.</p>
+        </div>
+        <div class="cell">
+          <span class="num">03</span>
+          <h3>Use.</h3>
+          <p>We get your people using it in their real work, with clear rules, training by role and a monthly report on what it is doing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Services</span>
+        <h2 id="services-heading">What we do</h2>
+      </div>
+      <ul class="link-rows">
+        {SERVICES.map((s, i) => (
+          <li>
+            <a href={s.href}>
+              <span class="num">{String(i + 1).padStart(2, '0')}</span>
+              <h3>{s.name}</h3>
+              <p>{s.short}</p>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="engagement-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">An engagement</span>
+        <h2 id="engagement-heading">How working with us goes</h2>
+        <p>You can stop after any step. Each one leaves you with something useful.</p>
+      </div>
+      <ol class="timeline">
+        {engagement.map((e, i) => (
+          <li>
+            <div>
+              <span class="num">{String(i + 1).padStart(2, '0')}</span>
+              <h3>{e.name}</h3>
+              {e.tag && <span class="tag">{e.tag}</span>}
+            </div>
+            <p>{e.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--dark" aria-labelledby="proof-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Proof</span>
+        <h2 id="proof-heading">Built for clients in Kenya, the UK, the Gulf, the US, Panama and Spain.</h2>
+      </div>
+      <div class="proof">
+        <div><strong>15+</strong><span>businesses served</span></div>
+        <div><strong>9</strong><span>countries</span></div>
+        <div><strong>Nairobi</strong><span>where we are based</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--first" aria-labelledby="cases-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Case studies</span>
+        <h2 id="cases-heading">Some of the work</h2>
+      </div>
+      <div class="grid grid-3 ruled">
+        {caseCards.map((c) => {
+          const Tag = c.href ? 'a' : 'div';
+          return (
+            <Tag class="card cell" href={c.href}>
+              <span class="meta">{c.location}</span>
+              <h3>{c.title}</h3>
+              <p>{c.summary}</p>
+              {c.href && <span class="more">Read the case study →</span>}
+            </Tag>
+          );
+        })}
+      </div>
+      <p class="mt-l"><a class="text-link" href="/case-studies/">All case studies</a></p>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="who-heading">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Who we work with</span>
+        <h2 id="who-heading">Organisations of 30 to 500 people.</h2>
+        <p class="lead">Big enough to have real processes and real waste. Small enough that one change shows up quickly.</p>
+      </div>
+      <ul class="pills" aria-label="Industries">
+        {INDUSTRIES.map((i) => <li>{i}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  {posts.length > 0 && (
+    <section class="section" aria-labelledby="blog-heading">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Blog</span>
+          <h2 id="blog-heading">Latest writing</h2>
+        </div>
+        <ul class="post-list">
+          {posts.map((p) => (
+            <li>
+              <a href={`/blog/${p.id}/`}>
+                <time datetime={p.data.date.toISOString()}>{formatDate(p.data.date)}</time>
+                <div>
+                  <h3>{p.data.title}</h3>
+                  <p>{p.data.description}</p>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="mt-l"><a class="text-link" href="/blog/">All posts</a></p>
+      </div>
+    </section>
+  )}
+
+  <CTA heading="Bring one process." body={`We will show you where AI fits. Book a free 30 minute Operations Review. You leave with a written summary whether you hire us or not. ${SITE.tagline}`} />
+</Base>

@@ -1,0 +1,124 @@
+---
+import Base from '../../layouts/Base.astro';
+import CTA from '../../components/CTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Case studies', href: '/case-studies/' },
+  { name: 'Five AI systems for a Dubai team', href: '/case-studies/dubai-five-ai-systems/' },
+];
+const systems = [
+  {
+    name: 'Email AI',
+    problem: 'Enquiries that came in at night were answered the next afternoon. By then, the person had often spoken to someone else.',
+    built: 'An email agent that replies within minutes and passes the complicated ones to a person.',
+  },
+  {
+    name: 'Social media AI',
+    problem: 'Comments and DMs piled up, and nobody owned them on weekends.',
+    built: 'A DM agent that answers, qualifies people and books calls.',
+  },
+  {
+    name: 'SMS AI',
+    problem: 'No shows were chased by hand.',
+    built: 'An SMS agent that sends reminders, handles rescheduling and follows up on missed calls.',
+  },
+  {
+    name: 'Voice AI',
+    problem: 'The founder spent hours on client check in calls and on chasing testimonials.',
+    built: 'A voice agent, in the founder’s own voice, that runs check in calls and records testimonials.',
+  },
+  {
+    name: 'Data detective AI',
+    problem: 'Sales mornings went on finding prospects and copying them into spreadsheets.',
+    built: 'An agent that finds and researches prospects and hands the team a ready list.',
+  },
+];
+const description =
+  'How we built five connected AI systems (email, social media, SMS, voice and lead research) for a busy Dubai team, so people could spend their time on conversations that need a person.';
+---
+<Base
+  title="Case study: five AI systems for a Dubai team"
+  description={description}
+  breadcrumbs={crumbs}
+  ogType="article"
+  schema={[{
+    '@type': 'Article',
+    headline: 'Five AI systems for a busy Dubai team',
+    description,
+    author: { '@type': 'Person', name: 'Edwin Ndumia' },
+    publisher: { '@id': 'https://eflapydigital.com/#organization' },
+    mainEntityOfPage: 'https://eflapydigital.com/case-studies/dubai-five-ai-systems/',
+  }]}
+>
+  <section class="page-hero" aria-labelledby="page-heading">
+    <div class="container">
+      <Breadcrumbs items={crumbs} />
+      <span class="eyebrow">Case study · Dubai, United Arab Emirates</span>
+      <h1 id="page-heading">Five AI systems for a busy Dubai team.</h1>
+      <p class="lead">A busy team, leads coming in from six channels, and a founder still making client check in calls himself. We built five systems that work as one.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="situation-heading">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">The situation</span>
+        <h2 id="situation-heading">Too many channels, not enough hands.</h2>
+      </div>
+      <div>
+        <p class="lead">Leads arrived by email, Instagram, Facebook, WhatsApp, SMS and phone. The team was busy, and replies depended on who happened to be free. The founder was doing client check in calls himself.</p>
+        <p class="lead">We are not naming the company here, so we describe the work and leave the name out.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="systems-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What we built</span>
+        <h2 id="systems-heading">Five systems, one problem each.</h2>
+      </div>
+      <ol class="systems">
+        {systems.map((s, i) => (
+          <li>
+            <div class="sys-name">
+              <span class="num">{String(i + 1).padStart(2, '0')}</span>
+              <h3>{s.name}</h3>
+            </div>
+            <div>
+              <p class="label">The problem</p>
+              <p>{s.problem}</p>
+            </div>
+            <div>
+              <p class="label">What we built</p>
+              <p>{s.built}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--dark" aria-labelledby="result-heading">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">The result</span>
+        <h2 id="result-heading">One connected system.</h2>
+      </div>
+      <p class="quote-line">The team spends its time on the conversations that need a person.</p>
+    </div>
+  </section>
+
+  <CTA />
+</Base>
+
+<style>
+  .systems { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--color-text); }
+  .systems li { display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; gap: 40px; padding: 36px 0; border-bottom: 1px solid var(--color-rule); margin: 0; }
+  .systems h3 { margin: 0; }
+  .systems p { margin: 0; color: var(--color-muted); }
+  .systems .label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text); margin-bottom: 8px; }
+  @media (max-width: 860px) { .systems li { grid-template-columns: 1fr; gap: 16px; } }
+</style>

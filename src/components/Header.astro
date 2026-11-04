@@ -1,0 +1,73 @@
+---
+import { NAV, BOOKING_URL, CTA } from '../config';
+const path = Astro.url.pathname;
+const isActive = (href: string) => path === href || path.startsWith(href);
+---
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="brand" aria-label="Eflapy Digital home">
+      <img src="/logo-light-360.png" alt="Eflapy Digital" width="150" height="59" />
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="visually-hidden">Menu</span>
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        {NAV.map((item) => (
+          <li><a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>{item.label}</a></li>
+        ))}
+      </ul>
+      <a class="btn header-btn" href={BOOKING_URL}>{CTA.button}</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--color-bg) 92%, transparent);
+    backdrop-filter: saturate(180%) blur(10px);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 24px; }
+  .brand img { width: 150px; height: auto; }
+  .site-nav { display: flex; align-items: center; gap: 36px; }
+  .site-nav ul { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
+  .site-nav li { margin: 0; }
+  .site-nav ul a { text-decoration: none; font-size: 0.97rem; font-weight: 500; color: var(--color-muted); }
+  .site-nav ul a:hover, .site-nav ul a[aria-current='page'] { color: var(--color-text); }
+  .header-btn { padding: 0.7em 1.2em; font-size: 0.92rem; }
+  .menu-toggle { display: none; }
+
+  @media (max-width: 900px) {
+    .menu-toggle {
+      display: inline-flex; flex-direction: column; justify-content: center; gap: 6px;
+      width: 44px; height: 44px; padding: 10px; background: none; border: 0; cursor: pointer;
+    }
+    .menu-toggle .bar { display: block; height: 2px; width: 24px; background: var(--color-text); transition: transform 0.2s; }
+    .menu-toggle[aria-expanded='true'] .bar:first-of-type { transform: translateY(4px) rotate(45deg); }
+    .menu-toggle[aria-expanded='true'] .bar:last-of-type { transform: translateY(-4px) rotate(-45deg); }
+    .site-nav {
+      display: none; position: absolute; top: 76px; left: 0; right: 0;
+      flex-direction: column; align-items: stretch; gap: 0;
+      background: var(--color-bg); border-bottom: 1px solid var(--color-rule); padding: 8px 24px 24px;
+    }
+    .site-nav.open { display: flex; }
+    .site-nav ul { flex-direction: column; gap: 0; }
+    .site-nav ul a { display: block; padding: 14px 0; border-bottom: 1px solid var(--color-rule); font-size: 1.05rem; color: var(--color-text); }
+    .header-btn { margin-top: 20px; }
+  }
+</style>
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('.menu-toggle');
+  const nav = document.getElementById('site-nav');
+  btn?.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    nav?.classList.toggle('open', !open);
+  });
+</script>

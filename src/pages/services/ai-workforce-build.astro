@@ -1,0 +1,106 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const types = [
+  { h: 'Customer agents', p: 'Agents that answer, qualify and follow up with customers.' },
+  { h: 'Document agents', p: 'Agents that prepare reports, documents and summaries.' },
+  { h: 'Workflows', p: 'Workflows that move information between your systems.' },
+  { h: 'Staff assistants', p: 'Assistants your staff use for daily decisions.' },
+  { h: 'Dashboards', p: 'Dashboards that show what the AI is doing.' },
+];
+const steps = [
+  { h: 'Design', p: 'We design each system around the process the assessment mapped.' },
+  { h: 'Build', p: 'We build it connected to your CRM, email, documents and accounts.' },
+  { h: 'Test', p: 'We test it on real work with your team before it goes live.' },
+  { h: 'Launch', p: 'We switch it on, watch it closely and adjust.' },
+];
+const compare = [
+  ['Same setup for everyone', 'Built around your process'],
+  ['Your team adapts to it', 'It adapts to your team'],
+  ['Nobody owns it after setup', 'We stay and maintain it'],
+  ['You pay for seats nobody uses', 'You pay for work that gets done'],
+];
+const after = [
+  'We watch how it performs',
+  'We fix what breaks',
+  'We add new uses as the team finds them',
+  'We send a monthly report to leadership',
+];
+---
+<ServiceLayout
+  name="AI Workforce Build"
+  title="AI Workforce Build"
+  description="We build what the assessment found, inside your operations: customer agents, document agents, workflows, staff assistants and dashboards, connected to your systems."
+  headline="We build what the assessment found, inside your operations."
+  intro="Agents, workflows and assistants that do specific jobs in your business, connected to the systems your team already uses, and looked after once they are live."
+>
+  <section class="section" aria-labelledby="types-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What we build</span>
+        <h2 id="types-heading">Five kinds of systems.</h2>
+      </div>
+      <div class="grid grid-3 ruled">
+        {types.map((t) => (
+          <div class="cell">
+            <h3>{t.h}</h3>
+            <p>{t.p}</p>
+          </div>
+        ))}
+        <div class="cell">
+          <h3>Not sure which you need?</h3>
+          <p>That is what the <a href="/services/ai-operations-assessment/">assessment</a> is for.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Process</span>
+        <h2 id="process-heading">Design. Build. Test. Launch.</h2>
+      </div>
+      <div class="grid grid-4 ruled">
+        {steps.map((s, i) => (
+          <div class="cell">
+            <span class="num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.h}</h3>
+            <p>{s.p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="compare-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The difference</span>
+        <h2 id="compare-heading">An off the shelf tool, or a system built for you.</h2>
+      </div>
+      <table class="compare">
+        <caption class="visually-hidden">Off the shelf AI tool compared with an Eflapy build</caption>
+        <thead>
+          <tr><th scope="col">Off the shelf AI tool</th><th scope="col">Eflapy build</th></tr>
+        </thead>
+        <tbody>
+          {compare.map(([a, b]) => <tr><td>{a}</td><td>{b}</td></tr>)}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="after-heading">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">After launch</span>
+        <h2 id="after-heading">We stay with it.</h2>
+        <p class="lead">A system that nobody looks after stops being useful. We keep it working.</p>
+      </div>
+      <ul class="rule-list">
+        {after.map((i) => <li>{i}</li>)}
+      </ul>
+    </div>
+  </section>
+</ServiceLayout>

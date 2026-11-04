@@ -1,0 +1,75 @@
+---
+import Base from '../../layouts/Base.astro';
+import CTA from '../../components/CTA.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { CASES } from '../../data/cases';
+
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Case studies', href: '/case-studies/' },
+];
+const featured = CASES.find((c) => c.featured)!;
+const rest = CASES.filter((c) => !c.featured);
+---
+<Base
+  title="Case studies"
+  description="AI and CRM systems Eflapy Digital has built for clients in the UAE, the UK, Panama and the US, including five connected AI systems for a Dubai company."
+  breadcrumbs={crumbs}
+>
+  <section class="page-hero" aria-labelledby="page-heading">
+    <div class="container">
+      <Breadcrumbs items={crumbs} />
+      <span class="eyebrow">Case studies</span>
+      <h1 id="page-heading">Work we have done.</h1>
+      <p class="lead">More than 15 businesses served across 9 countries since 2023. Here are some of them, described as they are. Where we do not name a client, we describe the work instead.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="featured-heading">
+    <div class="container">
+      <a class="featured" href={featured.href}>
+        <div>
+          <span class="eyebrow">{featured.location} · Featured</span>
+          <h2 id="featured-heading">{featured.title}</h2>
+          <p class="lead">{featured.summary}</p>
+          <span class="text-link">Read the case study →</span>
+        </div>
+        <ul class="rule-list rule-list--compact" aria-label="Systems built">
+          {featured.work.map((w) => <li>{w}</li>)}
+        </ul>
+      </a>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="more-heading">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="more-heading">More clients</h2>
+      </div>
+      <div class="grid grid-3 ruled cases">
+        {rest.map((c) => (
+          <article class="card cell">
+            <span class="meta">{c.location}{c.sector ? ` · ${c.sector}` : ''}</span>
+            <h3>{c.client}</h3>
+            <p>{c.summary}</p>
+            {c.work.length > 0 && (
+              <ul class="tags" aria-label="Work">
+                {c.work.map((w) => <li>{w}</li>)}
+              </ul>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</Base>
+
+<style>
+  .featured { display: grid; grid-template-columns: 1.5fr 1fr; gap: 72px; text-decoration: none; align-items: start; }
+  .featured:hover h2 { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
+  .featured .lead { margin-bottom: 28px; }
+  .cases { background: var(--color-bg); }
+  @media (max-width: 960px) { .featured { grid-template-columns: 1fr; gap: 32px; } }
+</style>
