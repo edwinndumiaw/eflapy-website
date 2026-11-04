@@ -8,14 +8,18 @@ export async function GET() {
   const u = (p: string) => `${SITE.url}${p}`;
   const body = `# Eflapy Digital
 
-> Eflapy Digital is an AI operations firm based in Nairobi, Kenya. We find where AI fits in your business, build it, and get your company using it. Tagline: "Off you. On us." Process: Find. Build. Use.
+> ${SITE.about} Tagline: "Off you. On us." Process: Find. Build. Use.
 
-Most companies already pay for AI tools like ChatGPT, Copilot or Claude. Very few of their people use them well. That gap is where we work.
+Most companies already pay for AI tools like ChatGPT, Copilot or Claude. Very few of their people use them well. That gap is where we work. We come in the way a forward deployed team does: we find where AI fits in the operation, build it, and get people using it.
 
-- Founder and Managing Director: Edwin Ndumia, Nairobi, Kenya
-- More than 15 businesses served across 9 countries, with clients in Kenya, the UK, the Gulf (Dubai), the US, Panama and Spain
-- Works with organisations of 30 to 500 people
+- Founded: October 2025, in Nairobi, Kenya
+- Founder and Managing Director: Edwin Ndumia
+- Mission: make sure every company that pays for AI gets real work out of it
+- Vision: African companies, starting in Kenya, running AI inside their operations as well as any company in the world
+- More than 15 businesses served across 9 countries, with clients in ${SITE.countries}
+- Works with organisations of 30 to 5,000 people
 - Industries: ${INDUSTRIES.join(', ')}
+- How we work: remotely with clients abroad, on site with clients in and around Nairobi
 - Contact: ${SITE.email}, ${SITE.phone}
 - Free 30 minute Operations Review: bring one process and we show you where AI fits. You leave with a written summary whether you hire us or not. Book: ${BOOKING_URL}
 
@@ -26,11 +30,11 @@ ${SERVICES.map((s) => `- [${s.name}](${u(s.href)}): ${s.short}`).join('\n')}
 ## Case studies
 
 - [All case studies](${u('/case-studies/')})
-${CASES.map((c) => `- ${c.href ? `[${c.title}](${u(c.href)})` : c.client} (${c.location}): ${c.summary}`).join('\n')}
+${CASES.map((c) => `- ${c.href ? `[${c.title}](${u(c.href)})` : c.client} (${c.location}${c.sector ? `, ${c.sector.toLowerCase()}` : ''}): ${c.summary}`).join('\n')}
 
 ## Company
 
-- [About](${u('/about/')}): founder, approach and principle ("Structure first. Then scale.")
+- [About](${u('/about/')}): what Eflapy Digital is, mission and vision, principle ("Structure first. Then scale."), facts and founder
 - [Book an Operations Review](${u('/book/')})
 - [Newsroom](${u('/newsroom/')})
 

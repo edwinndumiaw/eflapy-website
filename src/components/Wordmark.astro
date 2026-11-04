@@ -1,0 +1,27 @@
+---
+/**
+ * Text wordmark: "eflapy digital" in Comfortaa.
+ * "eflapy" is weight 700, "digital" is weight 300.
+ * Colour follows currentColor, so it is black on light sections and white on dark ones.
+ */
+interface Props { size?: string; class?: string; }
+const { size = '1.5rem', class: className = '' } = Astro.props;
+---
+<span class:list={['wordmark', className]} style={`--wm-size: ${size}`}><span class="wm-a">eflapy</span> <span class="wm-b">digital</span></span>
+
+<style>
+  .wordmark {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0;
+    font-family: var(--font-heading);
+    font-size: var(--wm-size);
+    line-height: 1;
+    color: currentColor;
+    white-space: nowrap;
+    text-transform: lowercase;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wm-a { font-weight: 700; letter-spacing: -0.035em; }
+  .wm-b { font-weight: 300; letter-spacing: 0.005em; margin-left: 0.28em; }
+</style>

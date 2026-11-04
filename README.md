@@ -21,7 +21,7 @@ npm run preview  # serve the built dist/ folder
    title: The title of the post
    description: One or two sentences used on the blog list, in search results and when the link is shared.
    date: 2026-11-20
-   author: Edwin Ndumia
+   author: Eflapy Digital
    tags: [company, lessons]
    ---
 
@@ -40,7 +40,7 @@ Optional fields:
 Open `src/config.ts` and edit:
 
 ```ts
-export const BOOKING_URL = 'https://cal.com/eflapydigital/operations-review';
+export const BOOKING_URL = 'https://link.eflapydigital.com/widget/bookings/book-a-call-with-eflapy-digital';
 ```
 
 Every "Book an operations review" button, the `/book/` page and `llms.txt` read from this one value. The same file holds the email, phone number, tagline and navigation.

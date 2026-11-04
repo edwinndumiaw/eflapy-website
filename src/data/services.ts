@@ -44,6 +44,9 @@ export const INDUSTRIES = [
   'Manufacturing and logistics',
   'Law and professional services',
   'NGOs and regional offices',
-  'Healthcare',
   'Real estate',
+  'Tours and travel',
+  'Security and facilities',
+  'Software companies',
+  'Removals and home services',
 ];

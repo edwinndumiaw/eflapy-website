@@ -1,5 +1,6 @@
 ---
 import { NAV, SITE, BOOKING_URL } from '../config';
+import Wordmark from './Wordmark.astro';
 const extra = [
   { label: 'Newsroom', href: '/newsroom/' },
   { label: 'Book a review', href: '/book/' },
@@ -14,7 +15,7 @@ const extra = [
     </div>
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/" aria-label="Eflapy Digital home"><img src="/logo-dark-360.png" alt="Eflapy Digital" width="150" height="59" loading="lazy" /></a>
+        <a class="footer-logo" href="/" aria-label="Eflapy Digital home"><Wordmark size="1.6rem" /></a>
         <p>Eflapy Digital is an AI operations firm based in Nairobi, Kenya. {SITE.process}</p>
       </div>
       <nav aria-label="Footer">
@@ -45,7 +46,8 @@ const extra = [
   .footer-top { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; padding-bottom: 56px; border-bottom: 1px solid var(--color-inverse-rule); }
   .footer-tagline { font-family: var(--font-heading); font-weight: 700; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.1; margin: 0; }
   .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 48px; padding: 56px 0; }
-  .footer-brand img { width: 150px; margin-bottom: 20px; }
+  .footer-logo { display: inline-block; color: var(--color-inverse-text); margin-bottom: 24px; }
+  .footer-logo:hover { text-decoration: none; }
   .footer-brand p { color: var(--color-inverse-muted); max-width: 340px; margin: 0; }
   .footer-h { font-family: var(--font-body); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-inverse-muted); margin-bottom: 18px; }
   .site-footer ul { list-style: none; padding: 0; margin: 0; }

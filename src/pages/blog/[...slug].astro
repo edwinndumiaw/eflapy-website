@@ -33,7 +33,9 @@ const iso = post.data.date.toISOString();
     description: post.data.description,
     datePublished: iso,
     dateModified: iso,
-    author: { '@type': 'Person', name: post.data.author },
+    author: post.data.author === SITE.name
+      ? { '@id': `${SITE.url}/#organization` }
+      : { '@type': 'Person', name: post.data.author },
     publisher: { '@id': `${SITE.url}/#organization` },
     mainEntityOfPage: url,
     url,

@@ -8,7 +8,7 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string(),
     date: z.coerce.date(),
-    author: z.string().default('Edwin Ndumia'),
+    author: z.string().default('Eflapy Digital'),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
   }),

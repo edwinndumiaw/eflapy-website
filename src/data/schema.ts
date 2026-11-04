@@ -5,11 +5,24 @@ export type Crumb = { name: string; href: string };
 const ORG_ID = `${SITE.url}/#organization`;
 
 const areaServed = [
-  { '@type': 'Country', name: 'Kenya' },
   { '@type': 'Country', name: 'United Kingdom' },
-  { '@type': 'Country', name: 'United Arab Emirates' },
+  { '@type': 'Country', name: 'Kenya' },
   { '@type': 'Country', name: 'United States' },
+  { '@type': 'Country', name: 'United Arab Emirates' },
+  { '@type': 'Country', name: 'Panama' },
+  { '@type': 'Country', name: 'Spain' },
+  { '@type': 'Country', name: 'India' },
 ];
+
+const founder = {
+  '@type': 'Person',
+  '@id': `${SITE.url}/about/#edwin-ndumia`,
+  name: SITE.founder,
+  jobTitle: 'Founder and Managing Director',
+  image: `${SITE.url}${SITE.founderImage}`,
+  email: SITE.email,
+  worksFor: { '@id': ORG_ID },
+};
 
 const address = {
   '@type': 'PostalAddress',
@@ -28,8 +41,12 @@ export function organizationSchema() {
       email: SITE.email,
       telephone: SITE.phoneHref,
       address,
+      description: SITE.about,
+      foundingDate: SITE.foundingDate,
+      foundingLocation: { '@type': 'Place', name: 'Nairobi, Kenya' },
+      areaServed,
       slogan: SITE.tagline,
-      founder: { '@type': 'Person', name: SITE.founder, jobTitle: 'Founder and Managing Director' },
+      founder,
     },
     {
       '@type': 'ProfessionalService',
@@ -38,7 +55,9 @@ export function organizationSchema() {
       url: SITE.url,
       logo: `${SITE.url}${SITE.logo}`,
       image: `${SITE.url}${SITE.ogImage}`,
-      description: SITE.description,
+      description: SITE.about,
+      foundingDate: SITE.foundingDate,
+      founder: { '@id': founder['@id'] },
       email: SITE.email,
       telephone: SITE.phoneHref,
       address,

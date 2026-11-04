@@ -3,63 +3,58 @@ import Base from '../layouts/Base.astro';
 import CTA from '../components/CTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { SITE } from '../config';
+import { INDUSTRIES } from '../data/services';
 
 const crumbs = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about/' },
 ];
+// Lower case the first word for use mid sentence, unless it is an acronym such as SACCOs or NGOs.
+const industries = INDUSTRIES.map((i) => (/^[A-Z]{2,}/.test(i) ? i : i.charAt(0).toLowerCase() + i.slice(1)));
+const industryList = `${industries.slice(0, -1).join(', ')} and ${industries[industries.length - 1]}`;
 ---
 <Base
   title="About"
-  description="Eflapy Digital is an AI operations firm in Nairobi, Kenya, founded by Edwin Ndumia. We have built AI and CRM systems for clients in six regions since 2023."
+  description="Eflapy Digital is an AI operations firm based in Nairobi, Kenya, founded in October 2025. We find where AI fits in a business, build it, and get its people using it."
   breadcrumbs={crumbs}
   schema={[{
     '@type': 'AboutPage',
     name: 'About Eflapy Digital',
     url: `${SITE.url}/about/`,
+    description: SITE.about,
     about: { '@id': `${SITE.url}/#organization` },
-  }, {
-    '@type': 'Person',
-    name: 'Edwin Ndumia',
-    jobTitle: 'Founder and Managing Director',
-    worksFor: { '@id': `${SITE.url}/#organization` },
-    address: { '@type': 'PostalAddress', addressLocality: 'Nairobi', addressCountry: 'KE' },
-    email: SITE.email,
   }]}
 >
   <section class="page-hero" aria-labelledby="page-heading">
     <div class="container">
       <Breadcrumbs items={crumbs} />
-      <span class="eyebrow">About</span>
-      <h1 id="page-heading">An AI operations firm based in Nairobi, Kenya.</h1>
-      <p class="lead">{SITE.coreLine} We have done this for clients in Kenya, the UK, the Gulf, the US, Panama and Spain.</p>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="founder-heading">
-    <div class="container split">
-      <div>
-        <span class="eyebrow">Founder</span>
-        <h2 id="founder-heading">Edwin Ndumia</h2>
-        <p class="muted">Founder and Managing Director</p>
-      </div>
-      <div>
-        <p class="lead">Edwin is based in Nairobi and studies Mass Communication (Public Relations) at JKUAT, the Jomo Kenyatta University of Agriculture and Technology.</p>
-        <p class="lead">Since 2023 he has built AI and CRM systems for clients in Kenya, the UK, the Gulf, the US, Panama and Spain: email and messaging agents, voice agents, lead research tools, inspection apps and the CRMs underneath them.</p>
-        <p class="lead">You can reach him at <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+      <span class="eyebrow">About Eflapy Digital</span>
+      <h1 id="page-heading">An AI operations firm.</h1>
+      <div class="about-intro">
+        <p class="lead">Eflapy Digital is an AI operations firm based in Nairobi, Kenya, founded in October 2025. We find where AI fits in a business, build it, and get the people in that business using it.</p>
+        <p class="lead">We call ourselves an AI operations firm because that is where the problem sits. Most companies have bought AI tools and heard a lot about what they can do, yet the tools are not doing real work. We come in the way a forward deployed team does: we sit with the people who do the work, find where AI fits in the operation, build it into the systems they already use, and stay until they use it.</p>
+        <p class="lead">We work with organisations of 30 to 5,000 people in {industryList}. We have built for clients in {SITE.countries}. We work remotely with clients abroad, and on site with clients in and around Nairobi, where we are based.</p>
       </div>
     </div>
   </section>
 
-  <section class="section section--alt" aria-labelledby="half-heading">
-    <div class="container split">
-      <div>
-        <span class="eyebrow">Why communication matters</span>
-        <h2 id="half-heading">AI adoption is half technical and half communication.</h2>
+  <section class="section" aria-labelledby="mission-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Why we exist</span>
+        <h2 id="mission-heading">Mission and vision</h2>
       </div>
-      <div>
-        <p class="lead">The technical half is building something that works. The other half is getting people to trust it, understand where it fits in their job, and change how they work.</p>
-        <p class="lead">In our experience, when an AI project stalls, it is rarely the technology. It stalls because nobody explained the change, the rules were unclear, or the people who were meant to use it were never asked. A background in Public Relations turns out to be useful here. Much of our work is listening, explaining and writing things down clearly.</p>
+      <div class="grid grid-2 ruled mv">
+        <div class="cell">
+          <span class="num">Our mission</span>
+          <p class="mv-line">Make sure every company that pays for AI gets real work out of it.</p>
+          <p>Not a pilot that fades, not a licence nobody opens. Work that gets done, in the processes the business already runs, by people who trust what they are using.</p>
+        </div>
+        <div class="cell">
+          <span class="num">Our vision</span>
+          <p class="mv-line">African companies, starting in Kenya, running AI inside their operations as well as any company in the world.</p>
+          <p>We want Eflapy Digital to be the team that makes that happen: the people a company calls when it is serious about putting AI to work.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -86,11 +81,28 @@ const crumbs = [
       <dl class="facts">
         <div><dt>What we are</dt><dd>An AI operations firm</dd></div>
         <div><dt>Based in</dt><dd>Nairobi, Kenya</dd></div>
-        <div><dt>Working since</dt><dd>2023</dd></div>
+        <div><dt>Founded</dt><dd>October 2025</dd></div>
         <div><dt>Clients</dt><dd>More than 15 businesses served across 9 countries</dd></div>
-        <div><dt>Who we work with</dt><dd>Organisations of 30 to 500 people</dd></div>
+        <div><dt>Where</dt><dd>The UK, Kenya, the US, the Gulf, Panama, Spain and India</dd></div>
+        <div><dt>Who we work with</dt><dd>Organisations of 30 to 5,000 people</dd></div>
         <div><dt>How we work</dt><dd>Find. Build. Use.</dd></div>
       </dl>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="founder-heading">
+    <div class="container split">
+      <div class="founder">
+        <img src={SITE.founderImage} alt="Edwin Ndumia, founder and Managing Director of Eflapy Digital" width="800" height="800" loading="lazy" decoding="async" />
+        <h2 id="founder-heading">Edwin Ndumia</h2>
+        <p class="muted">Founder and Managing Director</p>
+      </div>
+      <div class="founder-text">
+        <p class="lead">Edwin Ndumia is the founder and Managing Director of Eflapy Digital, and the visionary behind it. His background is in media technology, digital communication and public relations.</p>
+        <h3>What he believes</h3>
+        <p class="lead">AI adoption is half technical and half communication. Tools fail when the people meant to use them are not brought along. That is why every Eflapy Digital engagement covers how people are trained, what they are told, and how they are supported after launch, not only what gets built.</p>
+        <p class="lead">You can reach him at <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+      </div>
     </div>
   </section>
 
@@ -98,9 +110,20 @@ const crumbs = [
 </Base>
 
 <style>
+  .about-intro { max-width: 760px; }
+  .about-intro .lead { max-width: none; }
+  .mv { background: var(--color-bg); }
+  .mv .cell { padding: 44px 40px; }
+  .mv-line { font-family: var(--font-heading); font-weight: 700; font-size: clamp(1.3rem, 2.2vw, 1.65rem); line-height: 1.35; color: var(--color-text) !important; margin-bottom: 20px !important; text-wrap: balance; }
+  .founder img { width: 100%; max-width: 360px; aspect-ratio: 1; object-fit: cover; margin-bottom: 32px; }
+  .founder h2 { margin-bottom: 0.2em; }
+  .founder-text h3 { margin-top: 1.4em; }
   .facts { margin: 0; border-top: 1px solid var(--color-text); }
   .facts div { display: grid; grid-template-columns: 240px 1fr; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--color-rule); }
   .facts dt { color: var(--color-muted); }
   .facts dd { margin: 0; font-weight: 500; }
+  @media (max-width: 860px) {
+    .mv { grid-template-columns: 1fr; }
+  }
   @media (max-width: 720px) { .facts div { grid-template-columns: 1fr; gap: 4px; } }
 </style>
