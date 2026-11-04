@@ -5,7 +5,7 @@ export const BOOKING_URL = 'https://link.eflapydigital.com/widget/bookings/book-
 
 export const SITE = {
   name: 'Eflapy Digital',
-  url: 'https://eflapydigital.com',
+  url: 'https://www.eflapydigital.com',
   description:
     'Eflapy Digital is an AI operations firm based in Nairobi, Kenya, founded in October 2025. We find where AI fits in your business, build it, and get your company using it.',
   tagline: 'Off you. On us.',

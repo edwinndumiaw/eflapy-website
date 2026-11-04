@@ -86,7 +86,7 @@ In the Pages project, open **Custom domains** and add `eflapydigital.com` and `w
 2. Cloudflare shows two nameservers.
 3. In Squarespace, go to **Domains**, select `eflapydigital.com`, open **DNS** then **Domain nameservers**, switch to custom nameservers and enter the two Cloudflare nameservers.
 4. Wait for Cloudflare to show the domain as active (usually within a few hours). Then add the custom domains in the Pages project; Cloudflare creates the DNS records for you.
-5. Optionally add a redirect rule from `www` to the bare domain (or the other way) so there is one canonical address. The site's canonical URLs use `https://eflapydigital.com`.
+5. Optionally add a redirect rule from `www` to the bare domain (or the other way) so there is one canonical address. The site's canonical URLs use `https://www.eflapydigital.com`.
 
 **Option B: keep DNS at Squarespace.** Works for `www` only.
 
