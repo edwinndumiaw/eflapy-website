@@ -91,6 +91,6 @@ If you are considering an AI operations firm, a few questions separate the usefu
 
 ## Where Eflapy Digital comes in
 
-This is the work Eflapy Digital does. We are an AI operations firm based in Nairobi, working with organisations of 30 to 5,000 people. We find where AI fits, build it, and get people using it. We now offer this to companies in Kenya on site, and to companies abroad remotely.
+This is the work Eflapy Digital does. We are an AI operations firm based in Nairobi, working with organisations of 20 to 500 people. We find where AI fits, build it, and get people using it. We now offer this to companies in Kenya on site, and to companies abroad remotely.
 
 If there is one process in your business that takes too long or goes wrong too often, [book a free operations review](/book/). Bring that one process. In 30 minutes we will show you where AI fits, and you leave with a written summary whether you hire us or not.

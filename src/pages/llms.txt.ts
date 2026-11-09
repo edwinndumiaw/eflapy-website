@@ -13,11 +13,11 @@ export async function GET() {
 Most companies already pay for AI tools like ChatGPT, Copilot or Claude. Very few of their people use them well. That gap is where we work. We come in the way a forward deployed team does: we find where AI fits in the operation, build it, and get people using it.
 
 - Founded: October 2025, in Nairobi, Kenya
-- Founder and Managing Director: Edwin Ndumia
+- Head of AI Operations: Edwin Ndumia
 - Mission: make sure every company that pays for AI gets real work out of it
 - Vision: African companies, starting in Kenya, running AI inside their operations as well as any company in the world
 - More than 15 businesses served across 9 countries, with clients in ${SITE.countries}
-- Works with organisations of 30 to 5,000 people
+- Works with organisations of 20 to 500 people
 - Industries: ${INDUSTRIES.join(', ')}
 - How we work: remotely with clients abroad, on site with clients in and around Nairobi
 - Contact: ${SITE.email}, ${SITE.phone}
@@ -34,7 +34,7 @@ ${CASES.map((c) => `- ${c.href ? `[${c.title}](${u(c.href)})` : c.client} (${c.l
 
 ## Company
 
-- [About](${u('/about/')}): what Eflapy Digital is, mission and vision, principle ("Structure first. Then scale."), facts and founder
+- [About](${u('/about/')}): what Eflapy Digital is, mission and vision, principle ("Structure first. Then scale."), facts and leadership
 - [Book an Operations Review](${u('/book/')})
 - [Newsroom](${u('/newsroom/')})
 

@@ -22,7 +22,7 @@ export const SITE = {
   countries: 'the UK, Kenya, the US, the Gulf, Panama, Spain and India',
   /** Longer company description used in JSON-LD and llms.txt. Keep it in step with the About page. */
   about:
-    'Eflapy Digital is an AI operations firm based in Nairobi, Kenya, founded in October 2025. We work with organisations of 30 to 5,000 people to find where AI fits in their operations, build it, and get their people using it. We have built for clients in the UK, Kenya, the US, the Gulf, Panama, Spain and India, working remotely with clients abroad and on site with clients in and around Nairobi.',
+    'Eflapy Digital is an AI operations firm based in Nairobi, Kenya, founded in October 2025. We work with organisations of 20 to 500 people to find where AI fits in their operations, build it, and get their people using it. We have built for clients in the UK, Kenya, the US, the Gulf, Panama, Spain and India, working remotely with clients abroad and on site with clients in and around Nairobi.',
   ogImage: '/og-default.png',
   logo: '/logo-light.png',
 };

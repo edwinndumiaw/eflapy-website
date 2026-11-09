@@ -78,7 +78,7 @@ A modern CRM is not a contact list. Set up properly, it is the system your whole
 
 ## Where Eflapy Digital comes in
 
-We set up and run this system for companies of 30 to 5,000 people, under your own brand. We start by mapping how a client moves through your business today and where they go quiet. Then we build your inbox, pipeline, AI assistant, nurturing journeys and review process around that, connect it to the software you already run, and train each team on the part they use. After launch, we stay on to measure response times and improve what is not working.
+We set up and run this system for companies of 20 to 500 people, under your own brand. We start by mapping how a client moves through your business today and where they go quiet. Then we build your inbox, pipeline, AI assistant, nurturing journeys and review process around that, connect it to the software you already run, and train each team on the part they use. After launch, we stay on to measure response times and improve what is not working.
 
 If you want to know how your clients experience your company after they pay, [book a free 30 minute Operations Review](/book/). Bring one process, such as what happens after a deposit or a claim, and we will show you where the silence starts and how to close it. You leave with a written summary either way.
 

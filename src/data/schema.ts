@@ -18,7 +18,7 @@ const founder = {
   '@type': 'Person',
   '@id': `${SITE.url}/about/#edwin-ndumia`,
   name: SITE.founder,
-  jobTitle: 'Founder and Managing Director',
+  jobTitle: 'Head of AI Operations',
   image: `${SITE.url}${SITE.founderImage}`,
   email: SITE.email,
   worksFor: { '@id': ORG_ID },
