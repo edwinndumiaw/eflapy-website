@@ -90,7 +90,7 @@ This matters because business software only helps when people use it. Most faile
 
 ## What One Platform costs
 
-For businesses in Kenya, One Platform costs **KES 30,000 for setup** and **KES 7,500 per month**. For businesses outside Kenya, it costs **USD 400 for setup** and **USD 97 per month**.
+For businesses in Kenya, One Platform costs **KES 30,000 for setup** and **KES 4,000 per month**. For businesses outside Kenya, it costs **USD 400 for setup** and **USD 97 per month**.
 
 Setup covers configuring the account for your business, importing your existing customer list, connecting your channels and payments, building your first pipeline and automations, and training your team. AI employees and deeper custom work are priced separately, based on what your business needs.
 
@@ -121,7 +121,7 @@ Yes. In Kenya, One Platform connects with Pesapal for Mpesa and card payments. I
 Setup takes 10 to 14 days from the start of the project.
 
 **How much does One Platform cost?**
-In Kenya, KES 30,000 for setup and KES 7,500 per month. Outside Kenya, USD 400 for setup and USD 97 per month.
+In Kenya, KES 30,000 for setup and KES 4,000 per month. Outside Kenya, USD 400 for setup and USD 97 per month.
 
 **How do I get One Platform for my business?**
 Start with a free 30 minute Operations Review with Eflapy Digital. [Book it here](/book/).

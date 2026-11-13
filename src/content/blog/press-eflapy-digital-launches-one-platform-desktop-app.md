@@ -24,7 +24,7 @@ The platform connects with Pesapal so Kenyan customers can pay by Mpesa and card
 
 One Platform is available now to businesses in Kenya and internationally. Each account is set up by Eflapy Digital for the business that uses it, including pipelines, bookings, automations, payment connections and staff training. Setup takes 10 to 14 days.
 
-Pricing in Kenya is KES 30,000 for setup and KES 7,500 per month. Outside Kenya, pricing is USD 400 for setup and USD 97 per month. AI employees and custom work are priced separately.
+Pricing in Kenya is KES 30,000 for setup and KES 4,000 per month. Outside Kenya, pricing is USD 400 for setup and USD 97 per month. AI employees and custom work are priced separately.
 
 Eflapy Digital is setting up One Platform first for companies in real estate, insurance, logistics, travel and tourism, legal services, immigration consultancy, and security and facilities management.
 

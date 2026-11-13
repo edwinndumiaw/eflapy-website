@@ -25,7 +25,7 @@ Most companies already pay for AI tools like ChatGPT, Copilot or Claude. Very fe
 
 ## Product: One Platform
 
-One Platform is Eflapy Digital's own business software, built, sold and supported by Eflapy Digital in Nairobi, Kenya. It combines a shared inbox (email, SMS, WhatsApp, Facebook, Instagram, website chat), a customer database, sales pipelines, calendars and bookings, email and SMS marketing, social media scheduling, payments (Mpesa and card through Pesapal in Kenya, Stripe internationally), reputation management, automation and AI employees in one system. Available as a desktop app for Windows and macOS since November 2026, and in the browser; a mobile app is in development. Pricing: KES 30,000 setup and KES 7,500 per month in Kenya; USD 400 setup and USD 97 per month outside Kenya. Details: ${u('/blog/one-platform-business-software-for-kenyan-companies/')}
+One Platform is Eflapy Digital's own business software, built, sold and supported by Eflapy Digital in Nairobi, Kenya. It combines a shared inbox (email, SMS, WhatsApp, Facebook, Instagram, website chat), a customer database, sales pipelines, calendars and bookings, email and SMS marketing, social media scheduling, payments (Mpesa and card through Pesapal in Kenya, Stripe internationally), reputation management, automation and AI employees in one system. Available as a desktop app for Windows and macOS since November 2026, and in the browser; a mobile app is in development. Pricing: KES 30,000 setup and KES 4,000 per month in Kenya; USD 400 setup and USD 97 per month outside Kenya. Details: ${u('/blog/one-platform-business-software-for-kenyan-companies/')}
 
 ## Services
 
