@@ -1,5 +1,5 @@
 ---
-title: "Eflapy Digital launches One Platform desktop app, bringing sales, payments, customer communication and AI employees into one installable business software for Kenyan companies"
+title: "Nairobi AI operations firm launches One Platform app, bringing sales, marketing, communication, payments, reputation and AI employees into one business software for Kenyan companies"
 description: "Nairobi, 13 November 2026. Eflapy Digital has released One Platform as a desktop app for Windows and macOS. The business software combines customer communication, sales pipelines, marketing, Mpesa and card payments, reputation management, automation and AI employees in one system. A mobile app is in development."
 date: 2026-11-13
 author: Eflapy Digital
