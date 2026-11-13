@@ -66,6 +66,15 @@ li { margin-bottom: 0.4em; }
 .page-hero { padding: 96px 0 80px; }
 .page-hero h1 { max-width: 860px; }
 
+/* Laptop screens at 100% scale (short viewports): keep the whole hero, buttons included, above the fold.
+   Large desktops (taller viewports) and mobile are unaffected. */
+@media (min-width: 961px) and (max-height: 880px) {
+  .hero { padding: 48px 0 72px; }
+  .hero .eyebrow { margin-bottom: 14px; }
+  .hero h1 { font-size: clamp(2.4rem, 3.5vw, 3.1rem); max-width: 860px; margin-bottom: 0.45em; }
+  .hero .lead { font-size: 1.15rem; margin-bottom: 28px; }
+}
+
 /* Buttons */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 0.5em;
